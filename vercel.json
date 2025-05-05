@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/handler.py",
+      "src": "api/gen.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/gen",
-      "dest": "api/generate_key.py"
+      "dest": "api/gen.py"
     }
   ]
 }

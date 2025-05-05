@@ -1,6 +1,6 @@
 {
   "name": "vercel-key-api",
   "version": "1.0.0",
-  "main": "api/key.js",
+  "main": "api/gen.js",
   "license": "MIT"
 }

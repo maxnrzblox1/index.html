@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Speed Test</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 50px; }
+    #results { margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Internet Speed Test</h1>
+  <button onclick="runTest()">Start Test</button>
+  <div id="results"></div>
+
+  <script>
+    async function runTest() {
+      const results = document.getElementById('results');
+      results.innerHTML = "Testing...";
+
+      // --- Ping Test ---
+      const pingStart = performance.now();
+      try {
+        await fetch("https://speed.hetzner.de/1MB.bin?cache=" + Math.random(), { method: 'HEAD' });
+        const pingEnd = performance.now();
+        const ping = Math.round(pingEnd - pingStart);
+        results.innerHTML = `Ping: ${ping} ms<br>`;
+      } catch (e) {
+        results.innerHTML = "Ping failed.<br>";
+      }
+
+      // --- Download Speed Test ---
+      const start = performance.now();
+      try {
+        const response = await fetch("https://speed.hetzner.de/10MB.bin?cache=" + Math.random());
+        const blob = await response.blob();
+        const end = performance.now();
+
+        const sizeMB = blob.size / (1024 * 1024);
+        const timeSec = (end - start) / 1000;
+        const speedMbps = (sizeMB * 8) / timeSec;
+
+        results.innerHTML += `Download Speed: ${speedMbps.toFixed(2)} Mbps`;
+      } catch (e) {
+        results.innerHTML += "Download failed.";
+      }
+    }
+  </script>
+</body>
+</html>

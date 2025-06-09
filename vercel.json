@@ -1,0 +1,16 @@
+{
+  "headers": [
+    {
+      "source": "/10MB.bin",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store" }
+      ]
+    },
+    {
+      "source": "/1MB.bin",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store" }
+      ]
+    }
+  ]
+}

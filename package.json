@@ -1,6 +1,7 @@
 {
   "name": "vercel-key-api",
   "version": "1.0.0",
-  "main": "api/gen.js",
+  "main": "api/verify.js",
+  "node-fetch": "2.6.1",
   "license": "MIT"
 }

@@ -1,8 +1,8 @@
 import fetch from 'node-fetch';
 import FingerprintJS from '@fingerprintjs/fingerprintjs';
 
-const DISCORD_BOT_API = 'http://YOUR_BOT_SERVER_IP:5000/assign-role';
-const API_SECRET = 'YOUR_SECRET_KEY';
+const DISCORD_BOT_API = 'https://9284a528-8770-4828-9ea1-9e3333a8b142-00-1yp5q41srz8t9.kirk.replit.dev:5000/assign-role';
+const API_SECRET = 'maxlol1023';
 
 export default async function handler(req, res) {
   const discord_id = req.query.discord_id;
